@@ -1,0 +1,26 @@
+*{
+
+    margin: 0;
+    padding: 0;
+
+}
+
+
+body{
+
+    background-image: linear-gradient(to bottom, #f78b05, #f69600, #f5a100, #f3ac00, #f1b704);
+    height: 100vh;
+}
+
+
+@media screen and (max-width: 555px){
+
+    
+    body{
+
+        background-image: linear-gradient(to bottom, #f78b05, #f69600, #f5a100, #f3ac00, #f1b704);
+        height: 150vh;
+    }
+
+
+}
