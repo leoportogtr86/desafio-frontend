@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import If from '../If/index'
 
-
-let isDesktop = true
 
 
 
@@ -22,7 +20,6 @@ export const Title = styled.h3`
              
         font-size: 18px;    
 
-        ${isDesktop == false}
 
 
     }
@@ -41,7 +38,6 @@ export const Row = styled.div`
     @media screen and (max-width: 621px) {
     
         flex-wrap: wrap; 
-        ${isDesktop == false}
 
 
     }
@@ -62,7 +58,6 @@ export const RowStart = styled.div`
         justify-content: center;
         align-items: center;
         padding: 5px;
-        ${isDesktop == false}
 
 
     }
@@ -83,7 +78,6 @@ export const Col = styled.div`
     
         flex-wrap: wrap; 
         margin: 0;
-        ${isDesktop == false}
 
 
     }
@@ -125,9 +119,50 @@ export const Cidade = styled.p`
 
 export default props => {
 
+    const [isDesktop, setIsDesktop] = useState(true)
+    const [widthScreen, setWidthScreen] = useState(window.outerWidth)
+
+
+
+
+    console.log(window.outerWidth)
+
+    function verificaTela() {
+
+        console.log('verificando tamanho da tela')
+
+        if (widthScreen < 615) {
+
+            setIsDesktop(false)
+
+        }
+
+    }
+
+    useEffect(() => {
+
+
+        verificaTela()
+        setWidthScreen(window.outerWidth)
+        console.log(widthScreen)
+
+
+    }, [widthScreen])
+
+
+
+
+
     return (
 
+
+
+
+
         <div>
+
+
+
 
             <Title>
                 Capitais
