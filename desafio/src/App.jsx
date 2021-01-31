@@ -3,34 +3,11 @@ import styled from 'styled-components'
 import Input from './components/Input'
 import Titulo from './components/Titulo/index'
 import CapitaisCard from './components/CapitaisCard/index'
+import CardTemperaturas from './components/CardTemperaturas/index'
+import If from './components/If/index'
+import { Row, Line } from './components/Layout/index'
 
 
-const Row = styled.div`
-
-     display: flex;
-     flex-direction: row;
-     justify-content: center;
-     align-items: center;
-     width: 100%;
-`
-
-const Line = styled.div`
-
-    width: 340px;
-    height: 1px;
-    background-color: white;
-    text-align: center;
-    margin: auto;
-    margin-top: 40px;
-
-
-     @media screen and (max-width: 400px){
-
-         width: 400px;
-     }
-
-
-`
 
 
 
@@ -40,11 +17,13 @@ export default props => {
     return (
 
         <div>
-
-
             <Row>
                 <Titulo title="Previsão do tempo" />
 
+            </Row>
+
+            <Row>
+                <CardTemperaturas />
             </Row>
 
             <Row>
@@ -65,12 +44,6 @@ export default props => {
 
 
             </Row>
-
-
-
-
-
-
         </div>
     )
 }

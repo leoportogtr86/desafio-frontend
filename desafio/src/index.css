@@ -9,11 +9,36 @@
 body{
 
     background-image: linear-gradient(to bottom, #f78b05, #f69600, #f5a100, #f3ac00, #f1b704);
-    height: 100vh;
+    height: 130vh;
 }
 
 
 @media screen and (max-width: 555px){
+
+    
+    body{
+
+        background-image: linear-gradient(to bottom, #f78b05, #f69600, #f5a100, #f3ac00, #f1b704);
+    }
+
+
+}
+
+
+@media screen and (max-width: 555px){
+
+    
+    body{
+
+        background-image: linear-gradient(to bottom, #f78b05, #f69600, #f5a100, #f3ac00, #f1b704);
+        height: 115vh;
+    }
+
+
+}
+
+
+@media screen and (max-width: 360px){
 
     
     body{
@@ -24,3 +49,4 @@ body{
 
 
 }
+

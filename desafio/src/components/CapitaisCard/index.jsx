@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import If from '../If/index'
+
+
+let isDesktop = true
 
 
 
-const Title = styled.h3`
+export const Title = styled.h3`
 
     color: white;
     margin-left: 40px;
@@ -17,12 +21,16 @@ const Title = styled.h3`
          
              
         font-size: 18px;    
+
+        ${isDesktop == false}
+
+
     }
 
 `
 
 
-const Row = styled.div`
+export const Row = styled.div`
 
     display: flex;
     flex-direction: row;
@@ -30,17 +38,39 @@ const Row = styled.div`
     align-items: center;
     width: 100%;
     
-    @media screen and (max-width: 555px) {
+    @media screen and (max-width: 621px) {
     
         flex-wrap: wrap; 
+        ${isDesktop == false}
+
 
     }
-
-
   
 `
 
-const Col = styled.div`
+export const RowStart = styled.div`
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    
+    @media screen and (max-width: 621px) {
+    
+        flex-wrap: wrap; 
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        ${isDesktop == false}
+
+
+    }
+  
+`
+
+
+export const Col = styled.div`
 
     display: flex;
     flex-direction: column;
@@ -49,26 +79,30 @@ const Col = styled.div`
     width: 100%;
     margin: 30px;
 
-    @media screen and (max-width: 400px){
+    @media screen and (max-width: 620px){
     
         flex-wrap: wrap; 
+        margin: 0;
+        ${isDesktop == false}
+
 
     }
 
 `
 
-const Label = styled.p`
+export const Label = styled.p`
 
     font-size: 13px;
     font-weight: bold;
     color: #4d4949;
-    margin-right: 10px;
-    margin-left: 5px;
+    margin-right: 20px;
+    margin-left: 0px;
+    padding:0;
     font-family: 'Times New Roman', Times, serif;
 
 `
 
-const Temperatura = styled.p`
+export const Temperatura = styled.p`
     
     font-size: 13px;
     font-weight: bold;
@@ -78,11 +112,11 @@ const Temperatura = styled.p`
 
 `
 
-const Cidade = styled.p`
+export const Cidade = styled.p`
 
     font-size: 13px;
     font-weight: bold;
-    color: #1a1818;
+    color: #312e2e;
     margin: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
@@ -103,10 +137,10 @@ export default props => {
 
                 <Col>
 
-                    <Row>
+                    <RowStart>
                         <Label>Min.</Label>
                         <Label>Máx.</Label>
-                    </Row>
+                    </RowStart>
 
                     <Row>
                         <Temperatura>18°</Temperatura>
@@ -140,10 +174,21 @@ export default props => {
 
                 <Col>
 
-                    <Row>
-                        <Label>Min.</Label>
-                        <Label>Máx.</Label>
-                    </Row>
+
+                    <RowStart>
+
+
+                        <If teste={isDesktop}>
+
+                            <Label>Min.</Label>
+                            <Label>Máx.</Label>
+
+                        </If>
+
+
+                    </RowStart>
+
+
 
                     <Row>
                         <Temperatura>18°</Temperatura>
